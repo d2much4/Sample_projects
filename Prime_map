@@ -1,0 +1,341 @@
+#!/usr/bin/python
+
+# This is the Viper Discrete Mathematics module... Python
+import time
+
+t_initial = time.clock()
+
+def space_funct(spaces):
+    for i in range(0,spaces):
+        print' '
+
+def psuedo_solve(n,r_ps,ps_1,ps_2,col_final):
+    ps_col = (n-r_ps)
+    py_max = int(n/(30*ps_2))+2
+    px_max = int(n/(30*ps_1))+2
+    y_max = py_max-int(ps_1/30)
+    x_max = px_max-int(ps_2/30)
+
+    for y in range(0,y_max):
+        #print 'y=',y
+        for x in range(0,x_max):
+            x_factor = 30*x+ps_2
+            y_factor = 30*y+ps_1            
+            #print 'x=',x
+            z = ((n-r_ps)/30)-col_final
+            data = ps_1*x+ps_2*y+(30*x*y)-z           
+            if data==0:  
+                if ps_col%30==0:
+                    print n,'is in column',ps_col/30,'of the Psuedo-Prime Matrix'
+                    space_funct(1)
+                    if x_factor*y_factor==n:
+                    #space_funct(1)
+                        print 'f(x,y,z)=',ps_1,'x +',ps_2,'y + 30 xy - z'
+                        print '(x,y)max >> (',x_max,',',y_max,')'                
+                        print 'f(x,y,z)= 0','when x =',x,', y =',y,'and z =',z
+                        space_funct(1)
+                        print 'So, the factors are',x_factor,' and ',y_factor,'which equals',y_factor*x_factor       
+                        space_funct(1)
+                        print time.clock()-t_initial,'sec(s)for a solution'
+        
+def ps_solve_7(n):
+    # Field 7
+    funct_count = 1
+    #print 'field',funct_count
+    psuedo_solve(n,7,31,7,7)
+    #space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,7,11,17,6)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,7,13,19,8)
+    space_funct(1) 
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,7,23,29,22)
+    #space_funct(2)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+
+def ps_solve_11(n):
+    # Field 11
+    funct_count = 1
+    #print 'field',funct_count
+    psuedo_solve(n,11,31,11,11)
+    #space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,11,7,23,5)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,11,13,17,7)
+    space_funct(1) 
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,11,19,29,18)
+    #space_funct(2)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+
+def ps_solve_13(n):
+    # Field 13
+    funct_count = 1
+    #print 'field',funct_count
+    psuedo_solve(n,13,31,13,13)
+    #space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,13,7,19,4)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,13,11,23,8)
+    space_funct(1) 
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,13,17,29,16)
+    #space_funct(2)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    
+def ps_solve_17(n):
+    # Field 17
+    funct_count = 1
+    #print 'field',funct_count
+    psuedo_solve(n,17,31,17,17)
+    #space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,17,7,11,2)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,17,13,29,12)
+    space_funct(1) 
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,17,19,23,14)
+    #space_funct(2)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+
+def ps_solve_19(n):
+    # Field 19
+    funct_count = 1
+    #print 'field',funct_count
+    psuedo_solve(n,19,31,19,19)
+    #space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,19,7,7,1)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,19,13,13,5)
+    space_funct(1) 
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,19,17,17,9)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,19,11,29,10)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'    
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,19,23,23,17)
+    #space_funct(2)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    
+def ps_solve_23(n):
+    # Field 23
+    funct_count = 1
+    #print 'field',funct_count
+    psuedo_solve(n,23,31,23,23)
+    #space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,23,7,29,6)
+    #psuedo_solve(n,23,7,29,8)    
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,23,11,13,4)
+    space_funct(1) 
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,23,17,19,10)
+    #space_funct(2)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+
+def ps_solve_29(n):
+    # Field 29
+    funct_count = 1
+    #print 'field',funct_count
+    psuedo_solve(n,29,31,29,29)
+    #space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,29,7,17,3)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,29,11,19,6)
+    space_funct(1) 
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,29,13,23,9)
+    #space_funct(2)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+
+def ps_solve_31(n):
+    # Field 31
+    funct_count = 1
+    #print 'field',funct_count
+    psuedo_solve(n,31,31,31,31)
+    #space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,31,7,13,2)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,31,11,11,3)
+    space_funct(1) 
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,31,19,19,11)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,31,17,23,12)
+    space_funct(1)
+    #print time.clock()-t_initial,'sec(s) function computing time'    
+    funct_count += 1
+    #print 'field',funct_count
+    psuedo_solve(n,31,29,29,27)
+    #space_funct(2)
+    #print time.clock()-t_initial,'sec(s) function computing time'
+
+def digit_breakdown(n):
+    dig_str = str(n)
+    dig_places = len(dig_str)
+    last_dig_st = dig_str[dig_places-1:dig_places]
+    last_dig_int = int(last_dig_st)
+
+    print n,'has',dig_places,'digits and the last digit is',last_dig_int
+
+def div_by_2(n):
+    num = digit_breakdown(n)
+    if num%2==0:
+        print 'n is divisible by 2'
+        while n%2==0:
+            new_n=n/2
+            print new_n
+    else:
+        print 'n is not divisible by 2'
+
+def div_by_3(n):
+    if n%3==0:
+        print 'n is divisible by 3'
+        while n%3 == 0:
+            new_n = n/3
+            print new_n
+    else:
+        print 'n is not divisible by 3'
+def page_break(page):
+    if page == 1:
+        print'-------------------------------------'
+    else:
+        print '-----------------------------------------------------'
+
+def n_factor(n):
+    dig_str = str(n)
+    dig_places = len(str(n))
+    last_dig_st = dig_str[dig_places-1:dig_places]
+    last_dig_int = int(last_dig_st)
+    ps_even = 3*n+1
+    ps_odd = 3*n+2
+    space_funct(2)
+    print '         In what form would you like your solutions?'
+    print '         Non-linear systems of hyperbolic equations,'
+    print '                             or'
+    print 'Only the hyperbolas that contain the solutions from 0 to infinity'
+    print '                     with the solutions?'
+    print '      please type just equations or equations with solutions'
+    space_funct(2)
+    output_question = raw_input(str("-> "))
+    page_break(1)
+    space_funct(2)
+    if output_question == str("just equations"):
+        print 'Test #1, still needs to be added'
+        output_question = raw_input('Would you like to get the solutions, too?')
+        space_funct(1)
+        print 'Test #2, this part still needs to be added.'
+    elif output_question == str("equations with solutions") or str("continue with solutions"): 
+        #print 'The number in the tens place is',last_dig_int
+        if last_dig_int==7:
+            print 'field 7'
+            print '-------'
+            ps_solve_7(n)
+            print 'field 17'
+            print '--------'
+            ps_solve_17(n)
+            print '-----------------------------------------'
+            print 'took',time.clock()-t_initial,'to complete'
+        elif last_dig_int==1:
+            print 'field 11'
+            print '--------'
+            ps_solve_11(n)
+            print 'field 31'
+            print '--------'
+            ps_solve_31(n)
+            print '-----------------------------------------'
+            print 'took',time.clock()-t_initial,'to complete'
+        elif last_dig_int==3:
+            print 'field 13'
+            print '--------'
+            ps_solve_13(n)
+            print 'field 23'
+            print '--------'
+            ps_solve_23(n)
+            print '-----------------------------------------'
+            print 'took',time.clock()-t_initial,'to complete'
+        elif last_dig_int==9:
+            print 'field 19'
+            print '--------'
+            ps_solve_19(n)
+            print 'field 29'
+            print '--------'
+            ps_solve_29(n)
+            print '-----------------------------------------'
+            print 'took',time.clock()-t_initial,'to complete'
+        space_funct(1)
+        print'...of course',n,'and 1 are factors'
+        space_funct(2)
